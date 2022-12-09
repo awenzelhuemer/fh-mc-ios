@@ -1,22 +1,16 @@
 import Cocoa
 
-enum FriendshipError: Error {
-    case personAlreadyAdded
-    case personCantBeFriendWithItself
-    case friendOrPersonDoesNotExist
-}
-
 class Person: Hashable {
     
     var name: String
     
     init(name: String) {
-        print("init \(name)")
+        print("init Person\(name)")
         self.name = name
     }
     
     deinit {
-        print("deinit \(name)")
+        print("deinit Person \(name)")
     }
     
     func hash(into hasher: inout Hasher) {
@@ -30,91 +24,75 @@ class Person: Hashable {
 
 class FriendshipManager {
     
-    var friendships: [Person: [Person]] = [:]
+    init() {
+        print("init FriendshipManager")
+    }
     
-    func addFriendship(of: Person, with: Person) throws {
-        
-        if(of == with) {
-            throw FriendshipError.personCantBeFriendWithItself
+    deinit {
+        print("deinit FriendshipManager")
+    }
+    
+    private var friendships: [Person: Set<Person>] = [:]
+    
+    func addFriendship(of person1: Person, with person2: Person) {
+        if(friendships[person1] == nil) {
+            friendships[person1] = []
         }
         
-        if(friendships[of]?.contains(with) ?? false) {
-            throw FriendshipError.personAlreadyAdded
+        if(friendships[person2] == nil) {
+            friendships[person2] = []
         }
         
-        if(friendships.contains{ $0.key == of }) {
-            friendships[of]!.append(with)
-        } else {
-            friendships[of] = [with]
-        }
+        friendships[person1]!.insert(person2)
+        friendships[person2]!.insert(person1)
     }
     
     func friendCount(of: Person) -> Int {
         return friendships[of]?.count ?? 0
     }
     
-    func removeFriend(of: Person, with: Person) throws {
-        if(!(friendships[of]?.contains(with) ?? false)) {
-            throw FriendshipError.friendOrPersonDoesNotExist
-        }
-        
-        friendships[of]!.removeAll(where: {$0.name == with.name})
+    func removeFriend(of person1: Person, with person2: Person) throws {
+        friendships[person1]?.remove(person2)
+        friendships[person2]?.remove(person1)
     }
     
-    func outputFriendsOfPerson(p: Person, sort: (Person, Person) -> Bool) {
-        
-        if(friendships.contains{ $0.key == p }) {
+    func outputFriendsOfPerson(person: Person, sort: (Person, Person) -> Bool) {
+        if let friends = friendships[person] {
             var description = "[ "
-            for friend in friendships[p]!.sorted(by: sort) {
-                description += friend.name + " "
+            for friend in friends.sorted(by: sort) {
+                description += friend.name + "(" + String(friendCount(of: friend)) + ") "
             }
             description += "]"
-            
             print(description)
-            
-        } else {
-            print("No friends :(")
         }
     }
     
     class func test() {
+        let andreas = Person(name: "Andreas")
+        let patrick = Person(name: "Patrick")
+        let florian = Person(name: "Florian")
+        let kuerlis = Person(name: "Kürlis")
         
-        do {
-            let person1 = Person(name: "Andreas")
-            let person2 = Person(name: "Patrick")
-            let person3 = Person(name: "Florian")
-            let person4 = Person(name: "Thomas")
-            let person5 = Person(name: "Zeti")
-            
-            let manager = FriendshipManager()
-            // Andreas & friends
-            try manager.addFriendship(of: person1, with: person2)
-            try manager.addFriendship(of: person1, with: person3)
-            try manager.addFriendship(of: person1, with: person4)
-            try manager.addFriendship(of: person1, with: person5)
-            // Thomas & friends
-            try manager.addFriendship(of: person4, with: person3)
-            try manager.addFriendship(of: person4, with: person5)
-            try manager.addFriendship(of: person4, with: person1)
-            try manager.removeFriend(of: person4, with: person1)
- 
-            print(person1.name)
-            manager.outputFriendsOfPerson(p: person1, sort: namesAsc)
-            print(person4.name)
-            manager.outputFriendsOfPerson(p: person4, sort: friendCountAsc)
-            
-            func namesAsc(p1: Person, p2: Person) -> Bool {
-                return p1.name < p2.name
-            }
-            
-            func friendCountAsc(p1: Person, p2: Person) -> Bool {
-                return manager.friendCount(of: p1) < manager.friendCount(of: p2)
-            }
-        } catch {
-            
+        let manager = FriendshipManager()
+        manager.addFriendship(of: andreas, with: patrick)
+        manager.addFriendship(of: florian, with: kuerlis)
+        manager.addFriendship(of: patrick, with: florian)
+        manager.addFriendship(of: kuerlis, with: patrick)
+        
+        print(andreas.name)
+        manager.outputFriendsOfPerson(person: andreas, sort: namesAsc)
+        print(florian.name)
+        manager.outputFriendsOfPerson(person: florian, sort: namesAsc)
+        print(patrick.name)
+        manager.outputFriendsOfPerson(person: patrick, sort: friendCountAsc)
+        
+        func namesAsc(p1: Person, p2: Person) -> Bool {
+            return p1.name < p2.name
         }
         
-
+        func friendCountAsc(p1: Person, p2: Person) -> Bool {
+            return manager.friendCount(of: p1) < manager.friendCount(of: p2)
+        }
     }
 }
 
