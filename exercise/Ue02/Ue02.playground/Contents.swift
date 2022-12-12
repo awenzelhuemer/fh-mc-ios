@@ -57,17 +57,14 @@ class FriendshipManager {
     }
     
     func outputFriendsOfPerson(person: Person, sort: (Person, Person) -> Bool) {
-        if let friends = friendships[person] {
-            var description = "[ "
-            for friend in friends.sorted(by: sort) {
-                description += friend.name + "(" + String(friendCount(of: friend)) + ") "
-            }
-            description += "]"
-            print(description)
-        }
+       print(friendships[person]?
+            .sorted(by: sort)
+            .map{$0.name}
+            .joined(separator: ", ") ?? "0 friends")
     }
     
     class func test() {
+        let manuel = Person(name: "Manuel")
         let andreas = Person(name: "Andreas")
         let patrick = Person(name: "Patrick")
         let florian = Person(name: "Florian")
@@ -79,11 +76,13 @@ class FriendshipManager {
         manager.addFriendship(of: patrick, with: florian)
         manager.addFriendship(of: kuerlis, with: patrick)
         
-        print(andreas.name)
+        print("Friends of \(manuel.name):", terminator: " ")
+        manager.outputFriendsOfPerson(person: manuel, sort: namesAsc)
+        print("Friends of \(andreas.name):", terminator: " ")
         manager.outputFriendsOfPerson(person: andreas, sort: namesAsc)
-        print(florian.name)
+        print("Friends of \(florian.name):", terminator: " ")
         manager.outputFriendsOfPerson(person: florian, sort: namesAsc)
-        print(patrick.name)
+        print("Friends of \(patrick.name):", terminator: " ")
         manager.outputFriendsOfPerson(person: patrick, sort: friendCountAsc)
         
         func namesAsc(p1: Person, p2: Person) -> Bool {
