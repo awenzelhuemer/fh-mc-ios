@@ -45,7 +45,7 @@
                                     <constraint firstAttribute="width" constant="50" id="SDx-ri-sow"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="7"/>
+                                <buttonConfiguration key="configuration" style="filled" title="7" cornerStyle="capsule"/>
                                 <connections>
                                     <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchDown" id="kaO-5B-GXr"/>
                                 </connections>
@@ -57,7 +57,7 @@
                                     <constraint firstAttribute="height" constant="50" id="kl8-2p-6Ql"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="4"/>
+                                <buttonConfiguration key="configuration" style="filled" title="4" cornerStyle="capsule"/>
                                 <connections>
                                     <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchDown" id="Ew9-xN-Buq"/>
                                 </connections>
@@ -69,7 +69,7 @@
                                     <constraint firstAttribute="height" constant="50" id="k7t-PD-78h"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="8"/>
+                                <buttonConfiguration key="configuration" style="filled" title="8" cornerStyle="capsule"/>
                                 <connections>
                                     <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchDown" id="QCm-mE-hyH"/>
                                 </connections>
@@ -81,7 +81,7 @@
                                     <constraint firstAttribute="width" constant="50" id="d9h-TF-5nm"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="0"/>
+                                <buttonConfiguration key="configuration" style="filled" title="0" cornerStyle="capsule"/>
                                 <connections>
                                     <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchDown" id="M6m-FY-eIb"/>
                                 </connections>
@@ -93,7 +93,7 @@
                                     <constraint firstAttribute="width" constant="50" id="eSZ-Nt-idc"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="2"/>
+                                <buttonConfiguration key="configuration" style="filled" title="2" cornerStyle="capsule"/>
                                 <connections>
                                     <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchDown" id="p0e-Dg-RBA"/>
                                 </connections>
@@ -105,7 +105,7 @@
                                     <constraint firstAttribute="width" constant="50" id="m7b-fi-OfF"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="9"/>
+                                <buttonConfiguration key="configuration" style="filled" title="9" cornerStyle="capsule"/>
                                 <connections>
                                     <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchDown" id="p2l-aD-hJh"/>
                                 </connections>
@@ -117,7 +117,7 @@
                                     <constraint firstAttribute="width" constant="50" id="d4h-qI-9NV"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="3"/>
+                                <buttonConfiguration key="configuration" style="filled" title="3" cornerStyle="capsule"/>
                                 <connections>
                                     <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchDown" id="arG-53-vSg"/>
                                 </connections>
@@ -129,7 +129,7 @@
                                     <constraint firstAttribute="height" constant="50" id="L0h-21-mVX"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="1"/>
+                                <buttonConfiguration key="configuration" style="filled" title="1" cornerStyle="capsule"/>
                                 <connections>
                                     <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchDown" id="XI9-2t-epQ"/>
                                 </connections>
@@ -141,7 +141,7 @@
                                     <constraint firstAttribute="width" constant="50" id="zcX-iw-oWg"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="5"/>
+                                <buttonConfiguration key="configuration" style="filled" title="5" cornerStyle="capsule"/>
                                 <connections>
                                     <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchDown" id="W2k-QX-8C9"/>
                                 </connections>
@@ -153,7 +153,7 @@
                                     <constraint firstAttribute="height" constant="50" id="DRs-Yq-mSX"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="6"/>
+                                <buttonConfiguration key="configuration" style="filled" title="6" cornerStyle="capsule"/>
                                 <connections>
                                     <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchDown" id="wwO-KS-8dC"/>
                                 </connections>
@@ -213,46 +213,34 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="pBO-eh-X6F"/>
-                                <exclude reference="0e6-gb-2A8"/>
-                                <exclude reference="Wth-zv-DEe"/>
-                                <exclude reference="kT2-qc-clu"/>
                                 <exclude reference="0Lk-DC-uu3"/>
                                 <exclude reference="kkX-II-c6C"/>
                                 <exclude reference="sv5-Gi-yvf"/>
                                 <exclude reference="wSn-bK-BfL"/>
                                 <exclude reference="yXF-Py-Exg"/>
+                                <exclude reference="yOh-aG-YNX"/>
+                                <exclude reference="zdb-4A-gcb"/>
+                                <exclude reference="0e6-gb-2A8"/>
+                                <exclude reference="Wth-zv-DEe"/>
+                                <exclude reference="PdN-Aa-U3H"/>
+                                <exclude reference="TOg-OU-FI2"/>
+                                <exclude reference="kT2-qc-clu"/>
+                                <exclude reference="pBO-eh-X6F"/>
                                 <exclude reference="HFx-5c-D5Z"/>
                                 <exclude reference="ULk-NZ-sqg"/>
                                 <exclude reference="pIN-TA-rKL"/>
-                                <exclude reference="yOh-aG-YNX"/>
-                                <exclude reference="zdb-4A-gcb"/>
-                                <exclude reference="t09-uv-V7d"/>
-                                <exclude reference="PdN-Aa-U3H"/>
-                                <exclude reference="TOg-OU-FI2"/>
                                 <exclude reference="042-Ir-o9i"/>
                                 <exclude reference="1Fs-pQ-eUL"/>
                                 <exclude reference="wja-ri-Vi9"/>
                                 <exclude reference="6Ef-QT-MT2"/>
                                 <exclude reference="Guk-cG-ys7"/>
                                 <exclude reference="whc-D3-BmL"/>
+                                <exclude reference="t09-uv-V7d"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact">
                             <mask key="constraints">
                                 <exclude reference="V7t-hS-OC9"/>
-                                <exclude reference="8fL-eo-utF"/>
-                                <exclude reference="ICh-0t-66C"/>
-                                <exclude reference="Jc9-nU-Yml"/>
-                                <exclude reference="Yqg-jU-YUp"/>
-                                <include reference="pBO-eh-X6F"/>
-                                <include reference="0e6-gb-2A8"/>
-                                <exclude reference="CoR-fj-QNE"/>
-                                <exclude reference="V0n-d5-7uM"/>
-                                <include reference="Wth-zv-DEe"/>
-                                <exclude reference="17j-1f-A1L"/>
-                                <exclude reference="PsW-qX-ih6"/>
-                                <include reference="kT2-qc-clu"/>
                                 <include reference="0Lk-DC-uu3"/>
                                 <exclude reference="1W1-0N-OPF"/>
                                 <exclude reference="U8y-Bw-aBE"/>
@@ -260,21 +248,31 @@
                                 <include reference="sv5-Gi-yvf"/>
                                 <include reference="wSn-bK-BfL"/>
                                 <include reference="yXF-Py-Exg"/>
+                                <exclude reference="8fL-eo-utF"/>
+                                <exclude reference="ICh-0t-66C"/>
+                                <exclude reference="5Vr-eC-GJl"/>
+                                <exclude reference="hZo-mY-Pre"/>
+                                <include reference="yOh-aG-YNX"/>
+                                <include reference="zdb-4A-gcb"/>
+                                <include reference="0e6-gb-2A8"/>
+                                <exclude reference="CoR-fj-QNE"/>
+                                <exclude reference="V0n-d5-7uM"/>
+                                <include reference="Wth-zv-DEe"/>
+                                <exclude reference="KbG-Qe-6ls"/>
+                                <include reference="PdN-Aa-U3H"/>
+                                <include reference="TOg-OU-FI2"/>
+                                <exclude reference="hvE-XJ-wz0"/>
+                                <exclude reference="17j-1f-A1L"/>
+                                <exclude reference="PsW-qX-ih6"/>
+                                <include reference="kT2-qc-clu"/>
+                                <exclude reference="Jc9-nU-Yml"/>
+                                <exclude reference="Yqg-jU-YUp"/>
+                                <include reference="pBO-eh-X6F"/>
                                 <include reference="HFx-5c-D5Z"/>
                                 <include reference="ULk-NZ-sqg"/>
                                 <exclude reference="d8H-Wc-AUD"/>
                                 <include reference="pIN-TA-rKL"/>
                                 <exclude reference="wJP-yi-lJt"/>
-                                <exclude reference="5Vr-eC-GJl"/>
-                                <exclude reference="hZo-mY-Pre"/>
-                                <include reference="yOh-aG-YNX"/>
-                                <include reference="zdb-4A-gcb"/>
-                                <exclude reference="Q7N-KZ-BrI"/>
-                                <include reference="t09-uv-V7d"/>
-                                <exclude reference="KbG-Qe-6ls"/>
-                                <include reference="PdN-Aa-U3H"/>
-                                <include reference="TOg-OU-FI2"/>
-                                <exclude reference="hvE-XJ-wz0"/>
                                 <include reference="042-Ir-o9i"/>
                                 <exclude reference="0QI-6x-h5u"/>
                                 <include reference="1Fs-pQ-eUL"/>
@@ -286,6 +284,8 @@
                                 <exclude reference="Vtv-GH-64m"/>
                                 <exclude reference="f0J-TX-kAu"/>
                                 <include reference="whc-D3-BmL"/>
+                                <exclude reference="Q7N-KZ-BrI"/>
+                                <include reference="t09-uv-V7d"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact-widthClass=regular">
