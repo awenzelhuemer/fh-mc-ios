@@ -75,7 +75,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="68J-tc-5lj">
-                                <rect key="frame" x="171.66666666666666" y="359" width="50" height="50"/>
+                                <rect key="frame" x="171.66666666666663" y="359" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="EkM-0g-QS8"/>
                                     <constraint firstAttribute="width" constant="50" id="d9h-TF-5nm"/>
@@ -135,7 +135,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ym7-nx-jgu">
-                                <rect key="frame" x="171.66666666666666" y="219" width="50" height="50"/>
+                                <rect key="frame" x="171.66666666666663" y="219" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="V2f-B2-Zv5"/>
                                     <constraint firstAttribute="width" constant="50" id="zcX-iw-oWg"/>
