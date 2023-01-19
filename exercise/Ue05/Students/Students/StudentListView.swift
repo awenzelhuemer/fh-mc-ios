@@ -8,9 +8,18 @@ struct StudentListView: View {
     
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Student.lastname, ascending: true)],
-        // predicate: NSPredicate(format: "lastname CONTAINS[%@] OR firstname CONTAINS[%@]", searchText as NSString)
         animation: .default)
     private var studentData: FetchedResults<Student>
+    var query: Binding<String> {
+        Binding {
+            searchText
+        } set: { newValue in
+            searchText = newValue
+            studentData.nsPredicate = searchText.isEmpty
+                ? nil
+                : NSPredicate(format: "lastname CONTAINS %@ OR firstname CONTAINS %@", newValue, newValue)
+        }
+    }
     
     var body: some View {
         List(studentData) { student in
@@ -18,7 +27,7 @@ struct StudentListView: View {
                 StudentDetailView(student: student)
             }
         }
-        .searchable(text: $searchText)
+        .searchable(text: query)
     }
 }
 
